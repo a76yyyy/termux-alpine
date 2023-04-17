@@ -9,7 +9,7 @@
 <p align="center">
   <img src="https://github.com/illvart/termux-alpine/blob/main/ss.png?raw=true" alt="Alpine Linux Termux"/>
   <br>
-  <em>Check out the other screenshots on my <a href="https://www.instagram.com/notudope">Instagram</a>.</em>
+  <em>Check out the other screenshots on my <a href="https://www.instagram.com/illvart_">Instagram</a>.</em>
 </p>
 
 ## Table of Contents
