@@ -131,11 +131,7 @@ If you're using `--setup-user`, to login a non-root user after installation use 
 
 ## :sparkling_heart: Supports
 
-This project is open source and free to use under the [license](#license). However, if you are using this project and happy with it or just want to encourage me to continue creating stuff, there are few ways to supporting:
-
-- [PayPal]
-- [BuyMeACoffee]
-- [Saweria]
+This project is open source and free to use under the [license](#license). However, if you are using this project and happy with it or just want to encourage me to continue creating stuff please donate!
 
 ## Credits
 
@@ -154,7 +150,3 @@ This project is licensed under the **GPL-3.0 License**. See the [LICENSE][3] fil
 [2]: https://github.com/illvart/termux-alpine/blob/main/docs/CONTRIBUTING.md
 [3]: https://github.com/illvart/termux-alpine/blob/main/LICENSE
 [Termux]: https://termux.com
-[PayPal]: https://www.paypal.me/illvart
-[BuyMeACoffee]: https://www.buymeacoffee.com/illvart
-[Saweria]: https://saweria.co/illvart
-
