@@ -20,9 +20,9 @@ TERMUX_BIN=${PREFIX}/bin
 ## Running at distro
 LAUNCH_DISTRO=${TERMUX_BIN}/${EXEC_NAME}
 ## Distro url mirror
-MIRROR_URL="http://dl-cdn.alpinelinux.org"
+MIRROR_URL="http://mirrors.ustc.edu.cn"
 ## Mirror url pathname
-MIRROR_PATHNAME="${MIRROR_URL}/alpine/latest-stable/releases"
+MIRROR_PATHNAME="${MIRROR_URL}/alpine/v3.17/releases"
 ## Colorize distro name
 DISTRO_NAME="${BLUE}Alpine Linux${RST}"
 
