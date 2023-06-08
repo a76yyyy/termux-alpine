@@ -129,6 +129,53 @@ Options:
 
 If you're using `--setup-user`, to login a non-root user after installation use `login your_username` and enter the password.
 
+### QingLone 
+
+```sh
+set -x \
+&& echo -e "\n\
+export QL_DIR=/ql\n\
+export QL_BRANCH=develop\n\
+export LANG=zh_CN.UTF-8\n\
+export TERMUX_APK_RELEASE=F-DROID\n\
+export SHELL=/bin/bash\n\
+export PNPM_HOME=~/.local/share/pnpm\n\
+export PATH=$PATH:~/.local/share/pnpm:~/.local/share/pnpm/global/5/node_modules:$PNPM_HOME\n\
+export NODE_PATH=$NODE_PATH:/usr/local/bin:/usr/local/pnpm-global/5/node_modules:/usr/local/lib/node_modules:/root/.local/share/pnpm/global/5/node_modules\n" \
+>> /etc/profile.d/ql_env.sh \
+&& source /etc/profile \
+&& apk update -f \
+&& apk upgrade \
+&& apk --no-cache add -f bash make nodejs npm \
+    coreutils moreutils git curl wget tzdata perl \
+    openssl nginx jq openssh python3 py3-pip py3-setuptools py3-wheel python3-dev \
+&& rm -rf /var/cache/apk/* \
+&& apk update \
+&& ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+&& echo "Asia/Shanghai" > /etc/timezone \
+&& npm config set registry https://registry.npmmirror.com \
+&& npm install -g pnpm \
+&& pnpm config set registry https://registry.npmmirror.com \
+&& pnpm add -g pm2 tsx ts-node typescript tslib \
+&& mkdir -p $QL_DIR \
+&& git config --global user.email "qinglong@@users.noreply.github.com" \
+&& git config --global user.name "qinglong" \
+&& git config --global http.postBuffer 524288000 \
+&& git clone -b $QL_BRANCH https://github.com/whyour/qinglong.git $QL_DIR \
+&& cd $QL_DIR \
+&& cp -f .env.example .env \
+&& chmod 777 $QL_DIR/shell/*.sh \
+&& chmod 777 $QL_DIR/docker/*.sh \
+&& pnpm install --prod \
+&& rm -rf /root/.pnpm-store \
+&& rm -rf /root/.cache \
+&& rm -rf /root/.npm \
+&& mkdir -p $QL_DIR/static \
+&& git clone -b $QL_BRANCH https://github.com/whyour/qinglong-static.git $QL_DIR/static \
+&& ln -s /ql/docker/docker-entrypoint.sh /usr/bin/qinglong \
+&& qinglong
+```
+
 ## :sparkling_heart: Supports
 
 This project is open source and free to use under the [license](#license). However, if you are using this project and happy with it or just want to encourage me to continue creating stuff please donate!
