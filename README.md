@@ -144,6 +144,7 @@ export PATH=$PATH:~/.local/share/pnpm:~/.local/share/pnpm/global/5/node_modules:
 export NODE_PATH=$NODE_PATH:/usr/local/bin:/usr/local/pnpm-global/5/node_modules:/usr/local/lib/node_modules:/root/.local/share/pnpm/global/5/node_modules\n" \
 >> /etc/profile.d/ql_env.sh \
 && source /etc/profile \
+&& sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
 && apk update -f \
 && apk upgrade \
 && apk --no-cache add -f bash make nodejs npm \
@@ -153,9 +154,9 @@ export NODE_PATH=$NODE_PATH:/usr/local/bin:/usr/local/pnpm-global/5/node_modules
 && apk update \
 && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 && echo "Asia/Shanghai" > /etc/timezone \
-&& npm config set registry https://registry.npmmirror.com \
+&& npm config set registry https://npmreg.proxy.ustclug.org \
 && npm install -g pnpm \
-&& pnpm config set registry https://registry.npmmirror.com \
+&& pnpm config set registry https://npmreg.proxy.ustclug.org \
 && pnpm add -g pm2 tsx ts-node typescript tslib \
 && mkdir -p $QL_DIR \
 && git config --global user.email "qinglong@@users.noreply.github.com" \
