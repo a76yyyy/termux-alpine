@@ -44,7 +44,7 @@ pkg install -y ncurses-utils
 
 ```sh
 cd $HOME && \
-    git clone -b main https://github.com/illvart/termux-alpine.git && \
+    git clone -b ql https://github.com/a76yyyy/termux-alpine.git && \
     cd termux-alpine && \
     chmod +x setup-termux-alpine
 ```
