@@ -311,7 +311,7 @@ function update_at_distro() {
     fi
 
     ## packages to install
-    sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+    $LAUNCH_DISTRO "sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories"
     local pkg="bash bash-completion sudo tzdata curl wget git openssh nano vim neofetch"
     local up="Update, upgrade system and installed packages"
     local ins="Installing $pkg"
